@@ -46,7 +46,7 @@ int main()
 ```
 ## Camera - normal usage after calibration
 <p align="center">
-  <img width="1200" height="600" src="images/calibration_results.png">
+  <img width="920" height="400" src="images/calibration_results.png">
   <br>Calibration results
 </p>
 

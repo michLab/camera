@@ -12,7 +12,7 @@
 #include "camera.h"
 
 //#define RUN_TESTS
-//#define CAM_CALIBRATE
+#define CAM_CALIBRATE
 int main()
 {
 #ifndef RUN_TESTS
