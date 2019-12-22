@@ -15,11 +15,11 @@ Camera class depends from [openCV](https://opencv.org/) and [gtest](https://gith
 </p>
 
 * In main.cpp file set data fro yout camera and [chessboard](https://docs.opencv.org/master/pattern.png):
-** camera id
-** name for camera calibration file (it will be created)
-** chessboard dimensions (in horizontal view)
-** chessboard single square side dimension [m]
-** number of images to perform camera calibration (you shuld use at least 15)
+- camera id
+- name for camera calibration file (it will be created)
+- chessboard dimensions (in horizontal view)
+- chessboard single square side dimension [m]
+- number of images to perform camera calibration (you shuld use at least 15)
 * Uncomment line with CAM_CALIBRATE definition
 * Compile and run code. The number of current image and total images to acquire is shown in top left corner of
 the camera window. After getting all of images the calibration procesure starts automatically.
@@ -44,6 +44,40 @@ int main()
     // ...
 }
 ```
+## Camera - normal usage after calibration
+<p align="center">
+  <img width="920" height="600" src="images/calibration_results.png">
+  <br>Calibration procedure
+</p>
+* In main.cpp comment line with CAM_CALIBRATE definition
+* Choose the calibration algorithm: undistort or remap
+* Compile and run program
+* It should load data from calibration file created in calibration stage
+* The raw and calibrated windows shouls appers
+
+```c++
+//...
+if(cam.get_calibrated() == false) {
+    try {
+        cam.load_camera_calibration_data();
+    } catch (camera_ns::ExceptionMessage ex) {
+        std::cout << ex.msg << std::endl;
+    }
+}
+while (true) {
+    try {
+        cam.read();
+        cam.show_frame_raw();
+        cam.compensate_distortions(camera_ns::CorrectionType::undistort);
+        cam.show_frame_compensated();
+    } catch (camera_ns::ExceptionMessage ex) {
+        std::cout << ex.msg << std::endl;
+    }
+    cv::waitKey(10);
+}
+/...
+```
+
 
 ## License
 The contents of this repository are covered under the [MIT License](./LICENSE.txt)
