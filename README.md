@@ -81,6 +81,10 @@ while (true) {
 
 ## Features
 * gtest - in order to run google test uncomment the line with #define RUN_TESTS
+<p align="center">
+  <img width="920" height="600" src="images/gtest.png">
+  <br>Test results
+</p>
 * exceptions - namespace camera_ns contaings definition of exception thrown by camera class.
 
 

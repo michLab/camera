@@ -34,25 +34,25 @@ TEST(CameraTest, CameraCalibrationExceptionWrongId)
     ASSERT_EQ(catch_exception, true);
 }
 
-TEST(CameraTest, CameraCalibration)
-{
-    camera_ns::Camera cam;
-    cam.set_video_source(0);
-    cam.set_chessboard_dimensions(6,9);
-    cam.set_chessboard_square_dimension(0.0268f);
-    cam.set_number_of_images_to_calibrate(2);
-    bool catch_exception = false;
-    try {
-        cam.calibrate();
-    } catch (camera_ns::ExceptionMessage em) {
-        //std::cout << em.msg << std::endl;
-        catch_exception = true;
-    }
-    ASSERT_EQ(catch_exception, false);
+//TEST(CameraTest, CameraCalibration)
+//{
+//    camera_ns::Camera cam;
+//    cam.set_video_source(0);
+//    cam.set_chessboard_dimensions(6,9);
+//    cam.set_chessboard_square_dimension(0.0268f);
+//    cam.set_number_of_images_to_calibrate(2);
+//    bool catch_exception = false;
+//    try {
+//        cam.calibrate();
+//    } catch (camera_ns::ExceptionMessage em) {
+//        //std::cout << em.msg << std::endl;
+//        catch_exception = true;
+//    }
+//    ASSERT_EQ(catch_exception, false);
 
-    bool expected_flag_state = true;
-    EXPECT_EQ(expected_flag_state, cam.get_calibrated());
-}
+//    bool expected_flag_state = true;
+//    EXPECT_EQ(expected_flag_state, cam.get_calibrated());
+//}
 
 TEST(CameraTest, SetCameraCalibrationResultsFileName)
 {

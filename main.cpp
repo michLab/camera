@@ -12,8 +12,8 @@
 #include "camera.h"
 
 //#define RUN_TESTS
-#define CAM_CALIBRATE
-int main()
+//#define CAM_CALIBRATE
+int main(int argc, char** argv)
 {
 #ifndef RUN_TESTS
     camera_ns::Camera cam;
