@@ -46,9 +46,10 @@ int main()
 ```
 ## Camera - normal usage after calibration
 <p align="center">
-  <img width="1840" height="600" src="images/calibration_results.png">
-  <br>Calibration procedure
+  <img width="1200" height="600" src="images/calibration_results.png">
+  <br>Calibration results
 </p>
+
 * In main.cpp comment line with CAM_CALIBRATE definition
 * Choose the calibration algorithm: undistort or remap
 * Compile and run program
