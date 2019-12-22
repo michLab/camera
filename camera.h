@@ -82,6 +82,9 @@ namespace camera_ns {
         std::string get_camera_calibration_results_file_name() const;
         cv::Size get_chessboard_dimensions() const;
         cv::Mat get_frame_raw() const;
+        cv::Mat get_frame_calibrated() const;
+        cv::Mat* get_pointer_to_frame_raw();
+        cv::Mat* get_pointer_to_frame_calibrated();
 
         void calibrate();
         void compensate_distortions(CorrectionType ct);

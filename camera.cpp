@@ -191,6 +191,33 @@ cv::Mat Camera::get_frame_raw() const
 }
 
 /**
+ * @brief: Returns a calibrated frame
+ * @return: a cv::Mat frame
+ */
+cv::Mat Camera::get_frame_calibrated() const
+{
+    return frame_compensated;
+}
+
+/**
+ * @brief: Returns a pointer to raw captured frame
+ * @return: a cv::Mat frame pointer
+ */
+cv::Mat *Camera::get_pointer_to_frame_raw()
+{
+    return &captured_frame;
+}
+
+/**
+ * @brief: Returns a pointer to compensated frame
+ * @return: a cv::Mat frame pointer
+ */
+cv::Mat *Camera::get_pointer_to_frame_calibrated()
+{
+    return &frame_compensated;
+}
+
+/**
  * @brief: Returns a side size of single square of chessboard
  * @return: A side size of single sqare from chessboard
  */
