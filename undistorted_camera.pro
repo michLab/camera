@@ -26,3 +26,6 @@ LIBS += -lgtest -L/usr/local/lib/googletest -lpthread
 
 HEADERS += \
     camera.h
+
+DISTFILES += \
+    README.md
