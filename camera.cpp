@@ -218,6 +218,24 @@ cv::Mat *Camera::get_pointer_to_frame_calibrated()
 }
 
 /**
+ * @brief Camera::get_reference_to_frame_raw
+ * @return Reference to raw frame
+ */
+cv::Mat &Camera::get_reference_to_frame_raw()
+{
+    return captured_frame;
+}
+
+/**
+ * @brief Camera::get_reference_to_frame_calibrated
+ * @return Reference to compensated frame
+ */
+cv::Mat &Camera::get_reference_to_frame_calibrated()
+{
+    return frame_compensated;
+}
+
+/**
  * @brief: Returns a side size of single square of chessboard
  * @return: A side size of single sqare from chessboard
  */

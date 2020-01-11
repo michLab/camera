@@ -85,6 +85,8 @@ namespace camera_ns {
         cv::Mat get_frame_calibrated() const;
         cv::Mat* get_pointer_to_frame_raw();
         cv::Mat* get_pointer_to_frame_calibrated();
+        cv::Mat& get_reference_to_frame_raw();
+        cv::Mat& get_reference_to_frame_calibrated();
 
         void calibrate();
         void compensate_distortions(CorrectionType ct);
