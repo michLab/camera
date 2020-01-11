@@ -83,6 +83,8 @@ namespace camera_ns {
         cv::Size get_chessboard_dimensions() const;
         cv::Mat get_frame_raw() const;
         cv::Mat get_frame_calibrated() const;
+        cv::Mat get_camera_matrix() const;
+        cv::Mat get_dist_coefs() const;
         cv::Mat* get_pointer_to_frame_raw();
         cv::Mat* get_pointer_to_frame_calibrated();
         cv::Mat& get_reference_to_frame_raw();

@@ -200,6 +200,24 @@ cv::Mat Camera::get_frame_calibrated() const
 }
 
 /**
+ * @brief Camera::get_camera_matrix
+ * @return camera matrix
+ */
+cv::Mat Camera::get_camera_matrix() const
+{
+    return cam_matrix;
+}
+
+/**
+ * @brief Camera::get_dist_coefs
+ * @return dist coefs matrix
+ */
+cv::Mat Camera::get_dist_coefs() const
+{
+    return dist_coeffs;
+}
+
+/**
  * @brief: Returns a pointer to raw captured frame
  * @return: a cv::Mat frame pointer
  */
